@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "markdownx",
     "whitenoise.runserver_nostatic",
+    "toolbox",
+    "creatures",
 ]
 
 MIDDLEWARE = [

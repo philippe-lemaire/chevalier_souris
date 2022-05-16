@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Colonie de souris</h1>
+
+
+
+
+<div class="card" style="width: 50rem;">
+    <img src="https://place.dog/300/100" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{colony.name}}</h5>
+        <p class="card-text"><b>Population :</b> {{colony.inhabitants}}</p>
+        <p class="card-text"><b>Taille : </b>{{colony.size}}</p>
+        <p class="card-text"><b>Particularité : </b>{{colony.element_of_note}}</p>
+        <p class="card-text"><b>Événement : </b>{{colony.event}}</p>
+
+    </div>
+</div>
+
+{% endblock %}
