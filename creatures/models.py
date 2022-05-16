@@ -1,3 +1,21 @@
 from django.db import models
 
-# Create your models here.
+
+class Creature(models.Model):
+    name = models.CharField(max_length=60)
+    HP = models.IntegerField()
+    STR = models.IntegerField()
+    DEX = models.IntegerField()
+    WIL = models.IntegerField()
+    armor = models.IntegerField(blank=True)
+    attack1 = models.CharField(blank=True, max_length=60)
+    attack2 = models.CharField(blank=True, max_length=60)
+    crit = models.TextField(blank=True)
+    special = models.TextField(blank=True)
+    spells = models.CharField(blank=True, max_length=60)
+    wants = models.TextField(blank=True)
+    variation_name = models.CharField(blank=True, max_length=60)
+    variation_text = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.name}."

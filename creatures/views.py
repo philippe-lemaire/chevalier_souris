@@ -1,6 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import generic
+
+from .models import Creature
 
 # Create your views here.
-def index(request):
-    return HttpResponse("<h1>Hello, world. You're at the creatures index.</h1>")
+
+
+class IndexView(generic.ListView):
+    model = Creature
+
+
+class CreatureDetailView(generic.DetailView):
+    model = Creature

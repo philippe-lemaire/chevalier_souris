@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}
+Chevalier Souris - Bestiaire - {{ creature.name }}
+{% endblock %}
+{% block content %}
+<h1>{{ creature.name }}</h1>
+
+
+<table class="table">
+    <tr>
+        <td colspan="3"><strong>{{creature.HP}} PV</strong></td>
+    </tr>
+    <tr>
+        <td><strong>FOR {{creature.STR}}</strong></td>
+        <td><strong>DEX {{creature.DEX}}</strong></td>
+        <td><strong>VOL {{creature.WIL}}</strong></td>
+
+    </tr>
+    <tr>
+        <td><strong>Attaques :</strong></td>
+        <td><strong>{{creature.attack1}}</strong></td>
+        <td><strong>{{creature.attack2}}</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Sorts:</strong></td>
+        <td colspan="2"><strong>{{creature.spells}}</strong></td>
+    </tr>
+
+    <tr>
+        <td><strong>Veut :</strong></td>
+        <td colspan="2"><em>{{creature.wants}}</em></td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <td> <strong>{{creature.variation_name}}</strong></td>
+
+    </tr>
+    <tr>
+        <td>{{creature.variation_text}}</td>
+    </tr>
+</table>
+
+
+{% endblock %}
