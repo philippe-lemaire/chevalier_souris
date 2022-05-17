@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .game_logic.colony import generate_colony_obj
 from .game_logic.adventure_site import generate_adventure_site_obj
 from .game_logic.npc import NPC_Mouse
+from .game_logic.seeds import generate_seed_obj
 
 
 # Create your views here.
@@ -26,3 +27,13 @@ def generate_npc_mouse(request):
     npc = NPC_Mouse()
     context = {"npc": npc}
     return render(request, "toolbox/generate_npc_mouse.html", context)
+
+
+def generate_seed(request):
+    straight_seed = generate_seed_obj(mix=False)
+    mixed_seed = generate_seed_obj(mix=True)
+    context = {
+        "straight_seed": straight_seed,
+        "mixed_seed": mixed_seed,
+    }
+    return render(request, "toolbox/generate_seed.html", context)
