@@ -22,7 +22,7 @@
 
 
     {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Chevalier Souris</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -37,36 +37,27 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            Boîte à outils
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
+
                             <a class="dropdown-item" href="{% url 'toolbox:generate_colony' %}">Fonder une Colonie de
                                 Souris</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="{% url 'toolbox:generate_npc_mouse' %}">
+                                Une souris non joueuse</a>
+                            <a class="dropdown-item" href="{% url 'toolbox:generate_adventure_site' %}">
+                                Trouver un lieu d'aventure</a>
+
+                            <a class="dropdown-item" href="{% url 'toolbox:generate_seed' %}">
+                                Idées d'aventure</a>
+                            <a class="dropdown-item" href="{% url 'toolbox:generate_spell' %}">
+                                Découvrir un sort</a>
+                            <!--<div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>-->
+                            <!--<a class="dropdown-item" href="#">Action</a>-->
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'toolbox:generate_colony' %}">Fonder une Colonie de Souris</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'toolbox:generate_adventure_site' %}">
-                            Trouver un lieu d'aventure</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'toolbox:generate_npc_mouse' %}">
-                            Une souris non joueuse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'toolbox:generate_seed' %}">
-                            Idées d'aventure</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'toolbox:generate_spell' %}">
-                            Découvrir un sort</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
