@@ -23,43 +23,40 @@
 
     {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Chevalier Souris</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'creatures:index' %}">Bestiaire</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Boîte à outils
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="navbar-brand" href="/">Chevalier Souris</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
 
-                            <a class="dropdown-item" href="{% url 'toolbox:generate_colony' %}">Fonder une Colonie de
-                                Souris</a>
-                            <a class="dropdown-item" href="{% url 'toolbox:generate_npc_mouse' %}">
-                                Une souris non joueuse</a>
-                            <a class="dropdown-item" href="{% url 'toolbox:generate_adventure_site' %}">
-                                Trouver un lieu d'aventure</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'creatures:index' %}">Bestiaire</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Boîte à outils
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'toolbox:generate_colony' %}">Fonder une Colonie de
+                            Souris</a>
+                        <a class="dropdown-item" href="{% url 'toolbox:generate_npc_mouse' %}">
+                            Une souris non joueuse</a>
+                        <a class="dropdown-item" href="{% url 'toolbox:generate_adventure_site' %}">
+                            Trouver un lieu d'aventure</a>
 
-                            <a class="dropdown-item" href="{% url 'toolbox:generate_seed' %}">
-                                Idées d'aventure</a>
-                            <a class="dropdown-item" href="{% url 'toolbox:generate_spell' %}">
-                                Découvrir un sort</a>
-                            <!--<div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'toolbox:generate_seed' %}">
+                            Idées d'aventure</a>
+                        <a class="dropdown-item" href="{% url 'toolbox:generate_spell' %}">
+                            Découvrir un sort</a>
+                        <!--<div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--<a class="dropdown-item" href="#">Action</a>-->
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
+                        <!--<a class="dropdown-item" href="#">Action</a>-->
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
     <br>
