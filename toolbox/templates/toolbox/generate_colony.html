@@ -3,21 +3,28 @@
 
 {% block content %}
 <h1>Colonie de souris</h1>
+{% load static %}
+<img src="{% static 'toolbox/tavern.png' %}" />
 
+<h2>{{colony.name}}</h2>
+<table class="table">
+    <tr>
+        <td><b>Population</b></td>
+        <td>{{colony.inhabitants}}</td>
+    </tr>
+    <tr>
+        <td><b>Taille</b></td>
+        <td>{{colony.size}}</td>
+    </tr>
+    <tr>
+        <td><b>Particularité</b></td>
+        <td>{{colony.element_of_note}}</td>
+    </tr>
+    <tr>
+        <td><b>Événement</b></td>
+        <td>{{colony.event}}</td>
+    </tr>
 
-
-
-<div class="card" style="width: 50rem;">
-    {% load static %}
-    <img src="{% static 'toolbox/2_mice.jpg' %}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{colony.name}}</h5>
-        <p class="card-text"><b>Population :</b> {{colony.inhabitants}}</p>
-        <p class="card-text"><b>Taille : </b>{{colony.size}}</p>
-        <p class="card-text"><b>Particularité : </b>{{colony.element_of_note}}</p>
-        <p class="card-text"><b>Événement : </b>{{colony.event}}</p>
-
-    </div>
-</div>
+</table>
 
 {% endblock %}
