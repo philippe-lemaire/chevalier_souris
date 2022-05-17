@@ -4,6 +4,7 @@ from .game_logic.colony import generate_colony_obj
 from .game_logic.adventure_site import generate_adventure_site_obj
 from .game_logic.npc import NPC_Mouse
 from .game_logic.seeds import generate_seed_obj
+from .game_logic.spells import generate_spell_obj
 
 
 # Create your views here.
@@ -37,3 +38,8 @@ def generate_seed(request):
         "mixed_seed": mixed_seed,
     }
     return render(request, "toolbox/generate_seed.html", context)
+
+
+def generate_spell(request):
+    context = {"spell": generate_spell_obj()}
+    return render(request, "toolbox/generate_spell.html", context)
