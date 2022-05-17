@@ -10,4 +10,5 @@ urlpatterns = [
     path(
         "adventure_site/", views.generate_adventure_site, name="generate_adventure_site"
     ),
+    path("npc_mouse/", views.generate_npc_mouse, name="generate_npc_mouse"),
 ]
