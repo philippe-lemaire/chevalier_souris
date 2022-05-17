@@ -36,10 +36,12 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
         <td> <strong>{{creature.variation_name}}</strong></td>
 
     </tr>
-    <tr>
-        <td>{{creature.variation_text}}</td>
-    </tr>
 </table>
 
+<ol>
+    {% for var in creature.variation_set.all %}
+    <li><b>{{ var.first_part }} </b>{{ var.last_part }}</li>
+    {% endfor %}
+</ol>
 
 {% endblock %}

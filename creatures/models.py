@@ -15,7 +15,16 @@ class Creature(models.Model):
     spells = models.CharField(blank=True, max_length=60)
     wants = models.TextField(blank=True)
     variation_name = models.CharField(blank=True, max_length=60)
-    variation_text = models.TextField(blank=True)
+    # variation_text = models.TextField(blank=True)
 
     def __str__(self):
         return f"{self.name}."
+
+
+class Variation(models.Model):
+    creature = models.ForeignKey(Creature, on_delete=models.CASCADE)
+    first_part = models.CharField(max_length=200)
+    last_part = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.first_part} {self.last_part}"
