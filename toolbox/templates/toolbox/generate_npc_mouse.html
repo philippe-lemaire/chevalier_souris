@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Une souris</h1>
+
+
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Relation à une Souris Joueuse</th>
+
+    </tr>
+    <tr>
+        <td>{{npc.name}}</td>
+        <td>{{npc.relationship}}</td>
+
+    </tr>
+    <tr>
+        <th>Apparence</th>
+        <th>Signe particulier</th>
+        <th>Désir</th>
+    </tr>
+    <tr>
+        <td>{{npc.appearance}}</td>
+        <td>{{npc.quirk}}</td>
+        <td>{{npc.wants}}</td>
+    </tr>
+    <tr>
+        <th>Rang</th>
+        <th>Rémunération</th>
+    </tr>
+    <tr>
+        <td>{{npc.social_position}}</td>
+        <td>{{npc.payment}}</td>
+    </tr>
+    <tr>
+        <th>Signe de naissance</th>
+        <th>Comportement</th>
+    </tr>
+    <tr>
+        <td>{{npc.sign}}</td>
+        <td>{{npc.dispositions}}</td>
+    </tr>
+</table>
+{% endblock %}

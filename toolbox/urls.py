@@ -6,8 +6,13 @@ app_name = "toolbox"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("colony/", views.generate_colony, name="generate_colony"),
+    path("colonie_de_souris/", views.generate_colony, name="generate_colony"),
     path(
-        "adventure_site/", views.generate_adventure_site, name="generate_adventure_site"
+        "site_d_aventure/",
+        views.generate_adventure_site,
+        name="generate_adventure_site",
     ),
+    path("souris_non_joueuse/", views.generate_npc_mouse, name="generate_npc_mouse"),
+    path("graine_d_aventure/", views.generate_seed, name="generate_seed"),
+    path("trouver_un_sort/", views.generate_spell, name="generate_spell"),
 ]

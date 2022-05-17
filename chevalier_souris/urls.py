@@ -24,7 +24,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("toolbox/", include("toolbox.urls")),
+    path("boite_a_outils/", include("toolbox.urls")),
     path("creatures/", include("creatures.urls")),
     path("", TemplateView.as_view(template_name="index.html"), name="index"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
