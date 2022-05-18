@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -26,4 +27,9 @@ urlpatterns = [
         name="generate_mouse_pc",
     ),
     path("Trouver des trésors/", views.roll_treasure, name="roll_treasure"),
+    path(
+        "Feuilles de personnage en ligne/",
+        TemplateView.as_view(template_name="toolbox/character_keeper.html"),
+        name="character_keeper",
+    ),
 ]
