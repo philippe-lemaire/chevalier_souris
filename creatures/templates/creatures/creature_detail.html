@@ -7,9 +7,19 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
 
 
 <table class="table">
+    {% if creature.armor > 0 %}
+    <tr>
+        <td colspan="2"><strong>{{creature.HP}} PV</strong></td>
+        <td><strong>Armure</strong> {{creature.armor}}</td>
+
+    </tr>
+    {% else %}
     <tr>
         <td colspan="3"><strong>{{creature.HP}} PV</strong></td>
+
     </tr>
+
+    {% endif %}
     <tr>
         <td><strong>FOR {{creature.STR}}</strong></td>
         <td><strong>DEX {{creature.DEX}}</strong></td>
@@ -21,11 +31,12 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
         <td><strong>{{creature.attack1}}</strong></td>
         <td><strong>{{creature.attack2}}</strong></td>
     </tr>
+    {% if creature.spells %}
     <tr>
         <td><strong>Sorts:</strong></td>
         <td colspan="2"><strong>{{creature.spells}}</strong></td>
     </tr>
-
+    {% endif %}
     <tr>
         <td><strong>Veut :</strong></td>
         <td colspan="2"><em>{{creature.wants}}</em></td>
