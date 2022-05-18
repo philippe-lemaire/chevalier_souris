@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+
+<h1>Trouver des trésors</h1>
+
+<br>
+
+<form action="{% url 'toolbox:roll_treasure' %}" method="post">
+    {% csrf_token %}
+    <table class="table">
+        {{ form.as_table }}
+    </table>
+    <br>
+    <input type="submit" value="Lancer les dés">
+</form>
+
+{% if treasure_list %}
+<h2>Trouvailles</h2>
+<ul>
+    {% for treasure in treasure_list %}
+    <li>{{treasure}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

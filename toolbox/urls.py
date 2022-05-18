@@ -25,4 +25,5 @@ urlpatterns = [
         views.generate_mouse_pc,
         name="generate_mouse_pc",
     ),
+    path("Trouver des trésors/", views.roll_treasure, name="roll_treasure"),
 ]

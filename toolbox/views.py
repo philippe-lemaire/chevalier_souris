@@ -7,7 +7,8 @@ from .game_logic.seeds import generate_seed_obj
 from .game_logic.spells import generate_spell_obj
 from .game_logic.magic_sword import generate_magic_sword_obj
 from .game_logic.pc import generate_mouse_pc_obj
-
+from .forms import TreasureForm
+from .game_logic.treasure import generate_treasure_list
 
 # Create your views here.
 def index(request):
@@ -55,3 +56,31 @@ def generate_magic_sword(request):
 def generate_mouse_pc(request):
     context = {"pc": generate_mouse_pc_obj()}
     return render(request, "toolbox/generate_mouse_pc.html", context)
+
+
+def roll_treasure(request):
+    # if this is a POST request we need to process the form data
+    if request.method == "POST":
+        # create a form instance and populate it with data from the request:
+        form = TreasureForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # retrieve the values from the form
+            location = form.cleaned_data["location"]
+            magical = form.cleaned_data.get("magical")
+            beast = form.cleaned_data.get("beast")
+            adversity = form.cleaned_data.get("adversity")
+            # each question in the from that was True grants extra dice
+            extra_dice = sum((location, magical, beast, adversity))
+            treasure_list = generate_treasure_list(extra_dice=extra_dice)
+            # build the context
+            context = {
+                "form": form,
+                "treasure_list": treasure_list,
+            }
+            return render(request, "toolbox/roll_treasure.html", context)
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        context = {"form": TreasureForm()}
+    return render(request, "toolbox/roll_treasure.html", context)
