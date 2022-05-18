@@ -20,4 +20,9 @@ urlpatterns = [
         views.generate_magic_sword,
         name="generate_magic_sword",
     ),
+    path(
+        "créer_une_souris_joueuse/",
+        views.generate_mouse_pc,
+        name="generate_mouse_pc",
+    ),
 ]

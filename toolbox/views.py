@@ -6,6 +6,7 @@ from .game_logic.npc import NPC_Mouse
 from .game_logic.seeds import generate_seed_obj
 from .game_logic.spells import generate_spell_obj
 from .game_logic.magic_sword import generate_magic_sword_obj
+from .game_logic.pc import generate_mouse_pc_obj
 
 
 # Create your views here.
@@ -49,3 +50,8 @@ def generate_spell(request):
 def generate_magic_sword(request):
     context = {"sword": generate_magic_sword_obj()}
     return render(request, "toolbox/generate_magic_sword.html", context)
+
+
+def generate_mouse_pc(request):
+    context = {"pc": generate_mouse_pc_obj()}
+    return render(request, "toolbox/generate_mouse_pc.html", context)
