@@ -87,6 +87,9 @@ class Spell:
     effect: str
     recharge: str
 
+    def __str__(self):
+        return f"Le sort {self.name}. Effet : {self.effect} Recharge : {self.recharge}"
+
 
 def generate_spell_obj():
     name, effect, recharge = spells.get(roll("2d8"))

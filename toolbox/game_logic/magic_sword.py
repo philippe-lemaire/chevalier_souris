@@ -14,6 +14,12 @@ class MagicSword:
     curse: str
     curse_lifted_by: str
 
+    def __str__(self):
+        if not self.cursed:
+            return f"Une épée magique faite en {self.material}, de type {self.weapon_class_name}. Effet spécial : {self.effect_condition} : {self.effect_text}"
+        else:
+            return f"Une épée maudite faite en {self.material}, de type {self.weapon_class_name}. Malédiction : {self.curse}Levée si {self.curse_lifted_by} Après avoir levé la malédiction : {self.effect_condition} : {self.effect_text}"
+
 
 def generate_magic_sword_obj():
     medium = ("Moyenne", "(d6, patte directrice, ou d8, 2 pattes)")
