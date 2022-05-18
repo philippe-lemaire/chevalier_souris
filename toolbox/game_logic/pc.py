@@ -66,6 +66,64 @@ past = {
     },
 }
 
+colors = (
+    "Chocolat",
+    "Noir",
+    "Blanc",
+    "Brun",
+    "Gris",
+    "Bleu",
+)
+
+
+patterns = (
+    "uni",
+    "à rayures",
+    "irrégulier",
+    "en bandes",
+    "marbré",
+    "moucheté",
+)
+
+physical_traits = (
+    "Cicatrices",
+    "Fourrure entretenue",
+    "Corpulente",
+    "Dreadlocks",
+    "Squelettique",
+    "Fourrure teinte",
+    "Filiforme",
+    "Fourrure rasée",
+    "Petite",
+    "Fourrure frisée",
+    "Massive",
+    "Fourrure soyeuse",
+    "Peintures de guerre",
+    "Yeux d’ébène",
+    "Habits étrangers",
+    "Cache-Œil",
+    "Habits élégants",
+    "Yeux rouges",
+    "Habits rapiécés",
+    "Regard sage",
+    "Habits de mode",
+    "Regard vif",
+    "Habits sales",
+    "Regard lumineux",
+    "Oreille manquante",
+    "Queue coupée",
+    "Visage grumeleux",
+    "Queue-fouet",
+    "Joli visage",
+    "Queue touffue",
+    "Visage rond",
+    "Queue épaisse",
+    "Visage délicat",
+    "Queue préhensile",
+    "Visage allongé",
+    "Queue tordue",
+)
+
 
 def roll_stat():
     rolls = [random.randint(1, 6) for die in range(3)]
@@ -100,6 +158,9 @@ class Mouse_PC:
         elif best_stat <= 9:
             chosen_item = random.choice(alternative_past_items)
             self.inventory.append(chosen_item)
+
+        self.fur = f"{random.choice(colors)} {random.choice(patterns)}"
+        self.physical_trait = random.choice(physical_traits)
 
     def __repr__(self):
         return f"{self.name}. {self.STR=} {self.DEX=} {self.WIL=} {self.HP=} {self.pips=} {self.background} {self.inventory=}"
