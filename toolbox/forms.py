@@ -14,6 +14,6 @@ class TreasureForm(forms.Form):
         required=False,
     )
     adversity = forms.BooleanField(
-        label="Les souris ont du affronter de grands périls pour obtenir ce trésor ?",
+        label="Les souris ont-elle dû affronter de grands périls pour obtenir ce trésor ?",
         required=False,
     )
