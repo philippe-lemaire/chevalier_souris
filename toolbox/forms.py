@@ -7,7 +7,8 @@ class TreasureForm(forms.Form):
         required=False,
     )
     magical = forms.BooleanField(
-        label="Êtes-vous dans un lieu chargé de magie ?", required=False
+        label="Êtes-vous dans un lieu chargé de magie ?",
+        required=False,
     )
     beast = forms.BooleanField(
         label="Le trésor était-il défendu par une grande créature, ou un piège sournois ?",
