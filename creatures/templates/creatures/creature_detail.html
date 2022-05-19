@@ -16,7 +16,6 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
     {% else %}
     <tr>
         <td colspan="3"><strong>{{creature.HP}} PV</strong></td>
-
     </tr>
 
     {% endif %}
@@ -31,6 +30,16 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
         <td><strong>{{creature.attack1}}</strong></td>
         <td><strong>{{creature.attack2}}</strong></td>
     </tr>
+    {% if creature.crit %}
+    <tr>
+    <td colspan="3"><b>{{creature.crit}}</b></td>
+    </tr>
+    {% endif %}
+    {% if creature.special %}
+    <tr>
+    <td colspan="3">{{creature.special}}</td>
+    </tr>
+    {% endif %}
     {% if creature.spells %}
     <tr>
         <td><strong>Sorts:</strong></td>
@@ -38,21 +47,24 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
     </tr>
     {% endif %}
     <tr>
-        <td><strong>Veut :</strong></td>
+        <td><strong><em>Veut :</em></strong></td>
         <td colspan="2"><em>{{creature.wants}}</em></td>
     </tr>
 </table>
 <table class="table">
     <tr>
         <td> <strong>{{creature.variation_name}}</strong></td>
-
     </tr>
 </table>
 
-<ol>
+<ul class="list-group">
     {% for var in creature.variation_set.all %}
-    <li><b>{{ var.first_part }} </b>{{ var.last_part }}</li>
+    {% if forloop.counter == roll %}  
+    <li class="list-group-item active"><b>{{ var.first_part }} </b>{{ var.last_part }}</li>
+    {% else %}
+    <li class="list-group-item"><b>{{ var.first_part }} </b>{{ var.last_part }}</li>
+    {% endif %}
     {% endfor %}
-</ol>
+</ul>
 
 {% endblock %}
