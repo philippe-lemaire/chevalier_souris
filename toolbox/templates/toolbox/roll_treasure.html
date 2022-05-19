@@ -17,9 +17,9 @@
 {% if treasure_list %}
 <br>
 <h2>Trouvailles</h2>
-<ul>
+<ul class="list-group">
     {% for treasure in treasure_list %}
-    <li>{{treasure}}</li>
+    <li class="list-group-item">{{treasure}}</li>
     {% endfor %}
 </ul>
 {% endif %}
