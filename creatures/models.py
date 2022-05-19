@@ -7,7 +7,7 @@ class Creature(models.Model):
     STR = models.IntegerField()
     DEX = models.IntegerField()
     WIL = models.IntegerField()
-    armor = models.IntegerField(blank=True)
+    armor = models.IntegerField(null=True, blank=True)
     attack1 = models.CharField(blank=True, max_length=60)
     attack2 = models.CharField(blank=True, max_length=60)
     crit = models.TextField(blank=True)
