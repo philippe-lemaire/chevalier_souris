@@ -32,7 +32,8 @@ Chevalier Souris - Bestiaire - {{ creature.name }}
     </tr>
     {% if creature.crit %}
     <tr>
-    <td colspan="3"><b>Dégâts critiques : {{creature.crit}}</b></td>
+    <td><b>Dégâts critiques :</b></td>
+    <td colspan="2"><b>{{creature.crit}}</b></td>
     </tr>
     {% endif %}
     {% if creature.special %}
