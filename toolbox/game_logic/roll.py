@@ -13,6 +13,15 @@ def roll(dice):
     return sum(res)
 
 
+def roll_spell(n_dice):
+    raw_result = [random.randint(1, 6) for d in range(n_dice)]
+    print(raw_result)
+    SUM = sum(raw_result)
+    USES = len([d for d in raw_result if d > 3])
+    MISCAST = raw_result.count(6)
+    return SUM, USES, MISCAST
+
+
 def find_key(roll, table):
     """Finds the lowest valid key in a dict where the keys are integers"""
     for key in table:

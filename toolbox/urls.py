@@ -26,10 +26,11 @@ urlpatterns = [
         views.generate_mouse_pc,
         name="generate_mouse_pc",
     ),
-    path("Trouver des trésors/", views.roll_treasure, name="roll_treasure"),
+    path("trouver_des_tresors/", views.roll_treasure, name="roll_treasure"),
     path(
-        "Feuilles de personnage en ligne/",
+        "feuilles_de_personnage_en_ligne/",
         TemplateView.as_view(template_name="toolbox/character_keeper.html"),
         name="character_keeper",
     ),
+    path("lancer_un_sort/", views.roll_spell, name="roll_spell"),
 ]

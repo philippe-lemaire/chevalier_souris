@@ -7,7 +7,8 @@ from .game_logic.seeds import generate_seed_obj
 from .game_logic.spells import generate_spell_obj
 from .game_logic.magic_sword import generate_magic_sword_obj
 from .game_logic.pc import generate_mouse_pc_obj
-from .forms import TreasureForm
+from .game_logic.roll import roll_spell as rs
+from .forms import TreasureForm, RollSpellForm
 from .game_logic.treasure import generate_treasure_list
 
 # Create your views here.
@@ -84,3 +85,23 @@ def roll_treasure(request):
     else:
         context = {"form": TreasureForm()}
     return render(request, "toolbox/roll_treasure.html", context)
+
+
+def roll_spell(request):
+    if request.method == "POST":
+        form = RollSpellForm(request.POST)
+
+        if form.is_valid():
+            n_dice = form.cleaned_data.get("n_dice")
+            SUM, USES, MISCAST = rs(n_dice)
+            context = {
+                "form": form,
+                "SUM": SUM,
+                "USES": USES,
+                "MISCAST": MISCAST,
+            }
+            return render(request, "toolbox/roll_spell.html", context)
+        # if a GET (or any other method) we'll create a blank form
+    else:
+        context = {"form": RollSpellForm()}
+    return render(request, "toolbox/roll_spell.html", context)

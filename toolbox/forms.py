@@ -18,3 +18,12 @@ class TreasureForm(forms.Form):
         label="Les souris ont-elle dû affronter de grands périls pour obtenir ce trésor ?",
         required=False,
     )
+
+
+class RollSpellForm(forms.Form):
+    n_dice = forms.IntegerField(
+        label="À quelle puissance lancer le sort (de 1 à 3) ?",
+        required=True,
+        min_value=1,
+        max_value=3,
+    )
