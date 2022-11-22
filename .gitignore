@@ -57,6 +57,9 @@ coverage.xml
 # Django stuff:
 staticfiles/
 
+# db
+db.sqlite3
+
 # Coverage directory used by tools like istanbul
 coverage
 
